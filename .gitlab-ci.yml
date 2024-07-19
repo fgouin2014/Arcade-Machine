@@ -1,11 +1,15 @@
 image: alpine:latest
 
-pages:
-  script:
-      - mkdir .public
-          - cp -r * .public/
-            artifacts:
-                paths:
-                      - .public
-                        only:
-                            - main
+stages:
+  - deploy
+
+  pages:
+    stage: deploy
+      script:
+          - mkdir .public
+              - cp -r * .public/
+                artifacts:
+                    paths:
+                          - .public
+                            only:
+                                - main
